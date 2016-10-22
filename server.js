@@ -1,7 +1,6 @@
 var koa         = require("koa");
 var serve       = require("koa-static");
 var path        = require('path');
-var config      = require("./config");
 
 var server = koa();
 server.use(serve(path.join(__dirname, 'dist')));
@@ -38,9 +37,9 @@ server.use(function*(next) {
     }
 });
 
-server.listen(config.serverPort, (err) => {
+server.listen(8000, (err) => {
     if(err) {
         console.error("Server Error: " + err);
     }
-    console.info('==> ✅ Server is running on port: ' + config.serverPort);
+    console.info('==> ✅ Server is running on port: ' + 8000);
 });
